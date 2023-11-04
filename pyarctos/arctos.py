@@ -1,8 +1,12 @@
 import json
+
 import requests
+import pyarctos
+
 
 _API_KEY = None
 _ARCTOS_URL = "https://arctos.database.museum/component/api/v2"
+
 
 def set_api_key(key: str):
     '''Set the API key to use to access Arctos through'''
