@@ -14,7 +14,7 @@ def set_api_key(key: str):
     _API_KEY = key
 
 
-def catalog(query: str, start=0: int):
+def catalog(query: str, start=0):
     if _API_KEY is None:
         raise 'no api key'
     params = {
