@@ -10,6 +10,7 @@ _ARCTOS_URL = "https://arctos.database.museum/component/api/v2"
 
 def set_api_key(key: str):
     '''Set the API key to use to access Arctos through'''
+    global _API_KEY
     _API_KEY = key
 
 
@@ -18,7 +19,7 @@ def catalog(query: str):
         raise 'no api key'
     params = { 'api_key': _API_KEY, 'method': 'getCatalogData', 'query': query }
     headers = {'user-agent': 'PyArctos/0.0.1'}
-    r = requests.get(f'{_ARCTOS_URL}/', params=params)
+    r = requests.get(f'{_ARCTOS_URL}/catalog.cfg', params=params)
     if not r.status_code == requests.codes.ok:
         r.raise_for_status()
     return r
