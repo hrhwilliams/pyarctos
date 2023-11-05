@@ -17,7 +17,7 @@ def set_api_key(key: str):
 def catalog(query: str):
     if _API_KEY is None:
         raise 'no api key'
-    params = { 'api_key': _API_KEY, 'method': 'getCatalogData', 'query': query }
+    params = { 'api_key': _API_KEY, 'method': 'getCatalogData', 'scientific_name': query }
     headers = {'user-agent': 'PyArctos/0.0.1'}
     r = requests.get(f'{_ARCTOS_URL}/catalog.cfg', params=params)
     if not r.status_code == requests.codes.ok:
