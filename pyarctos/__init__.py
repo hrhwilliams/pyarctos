@@ -1,2 +1,2 @@
-from .arctos import set_api_key
+from .arctos import set_api_key, catalog
 
